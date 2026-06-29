@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusTracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="drag-bar">
+    <span id="app-name">FocusTracker</span>
+    <div id="drag-controls">
+      <button id="btn-toggle-size" title="Collapse">&#9662;</button>
+      <button id="btn-close" title="Hide">&#215;</button>
+    </div>
+  </div>
+
+  <div id="main-content">
+
+    <!-- Mode toggle -->
+    <button id="mode-toggle" class="mode-study">
+      <span id="toggle-icon">📚</span>
+      <span id="toggle-label">Studying</span>
+      <span id="toggle-hint">tap to take a break</span>
+    </button>
+
+    <!-- Break warning -->
+    <div id="warn-msg" style="display:none;">⚠️ You've been on break for 15+ min</div>
+
+    <!-- Timer grid -->
+    <div id="timer-grid">
+      <div class="timer-box" id="study-box">
+        <div class="timer-label">Study</div>
+        <div class="timer-value" id="study-time">00:00:00</div>
+      </div>
+      <div class="timer-box" id="break-box">
+        <div class="timer-label">Break</div>
+        <div class="timer-value" id="break-time">00:00:00</div>
+      </div>
+    </div>
+
+    <!-- Focus score -->
+    <div id="focus-score-row" class="score-green">
+      <div id="focus-score-header">
+        <span id="focus-label">Focus score</span>
+        <span id="focus-pct">100%</span>
+      </div>
+      <div id="focus-bar-track">
+        <div id="focus-bar-fill" style="width:100%"></div>
+      </div>
+    </div>
+
+    <!-- Streak -->
+    <div id="streak-row">
+      <span id="streak-fire">🔥</span>
+      <span id="streak-label">Streak</span>
+      <span id="streak-value">0 days</span>
+    </div>
+
+    <!-- Problem counter -->
+    <div id="counter-row">
+      <span id="counter-label">Problems solved</span>
+      <div id="counter-controls">
+        <button id="btn-dec">&#8722;</button>
+        <span id="counter-value">0</span>
+        <button id="btn-inc">+</button>
+      </div>
+    </div>
+
+    <!-- More row -->
+    <div id="more-row">
+      <button id="btn-more">&#8943; More</button>
+    </div>
+
+    <!-- Options panel -->
+    <div id="options-panel" style="display:none;">
+      <div id="today-summary">
+        <div class="sum-label">Today's Summary</div>
+        <div class="sum-row"><span>Study time</span><span class="sum-val" id="sum-study">0h 0m</span></div>
+        <div class="sum-row"><span>Break time</span><span class="sum-val" id="sum-break">0h 0m</span></div>
+        <div class="sum-row"><span>Problems solved</span><span class="sum-val" id="sum-problems">0</span></div>
+      </div>
+      <button class="opt-btn" id="btn-reset-session">Reset session timers</button>
+      <button class="opt-btn" id="btn-reset-counter">Reset problem counter</button>
+      <button class="opt-btn danger-btn" id="btn-reset-streak">Reset streak</button>
+    </div>
+
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
